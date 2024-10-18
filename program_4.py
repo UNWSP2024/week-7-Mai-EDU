@@ -1,10 +1,27 @@
+# Programmer: Mai Lillie
+# Date: 10/18/24
 # Program #4: Coordinates
-# Write a distance function that will take two 3-dimensional coordinates (as input) 
-# and will return (as output) the distance between those points in space.  
-# The 3-dimensional coordinates must be stored as tuples.
+import math
 
-# Now write a mainline that has the user enter the two tuples.  
-# The mainline calls the distance function and stores the distance in a variable.  The mainline then displays the distance.  
-# Also include exception handling to deal with faulty input.
-# The distance between two points (x1,y1,z1) and (x2, y2, z2) is 
-#    given by:   sqrt ((x2-x1)^2 + (y2 - y1)^2 + (z1 - z2)^2) 
+# Gets two coordinates from the user and finds the distance between
+def main():
+    coordinate_a = int(input("What is the first number of your first coordinate?: "))
+    coordinate_b = int(input("What is the second number of your first coordinate?: "))
+    coordinate_c = int(input("What is the third number of your first coordinate?: "))
+    coordinate_d = int(input("What is the first number of your second coordinate?: "))
+    coordinate_e = int(input("What is the second number of your coordinate?: "))
+    coordinate_f = int(input("What is the third number of your coordinate?: "))
+    coordinate1 = (coordinate_a, coordinate_b, coordinate_c)
+    coordinate2 = (coordinate_d, coordinate_e, coordinate_f)
+    final = distance (coordinate1, coordinate2)
+    print(f"The distance is: {final:.2f}.")
+
+# Function to find the actual distance between coordinates
+def distance(input1, input2):
+    x = ((input1[0]-input2[0])**2) + ((input1[1]-input2[1])**2) + ((input1[2]-input2[2])**2)
+    total = math.sqrt(x)
+    return total
+
+# Call the main function.
+if __name__ == '__main__':
+    main()
